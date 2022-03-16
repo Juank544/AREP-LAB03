@@ -26,27 +26,34 @@ El software que vamos a necesitar para ejecutar es:
 Empezamos con el servidor de spark, donde luego de implementarlo verificamos su funcionamiento:
 
 * El metodo GET que nos devuleve las 10 ultimas cadenas de la base de datos
-![img.png](img/img_1.png)
+
+    ![img.png](img/img_1.png)
 
 
 * El metodo POST que nos permite añadir más cadenas a la base de datos
-![img.png](img/img_2.png)
+
+    ![img.png](img/img_2.png)
 
 Luego de esto creamos la imagen de docker
+
 ![img.png](img/img_3.png)
 ![img.png](img/img_4.png)
 
 Luego debemos crear las 3 instancias de un contenedor
+
 ![img.png](img/img_5.png)
 
 Vemos que los contenedores se están ejecutando
+
 ![img.png](img/img_6.png)
 ![img.png](img/img_7.png)
 
 Utilizamos el comando `docker-compose up -d` para crear los servicios
+
 ![img.png](img/img_8.png)
 
 Verificamos que se hayan creado desde Docker Desktop
+
 ![img.png](img/img_9.png)
 ## Built With
 
