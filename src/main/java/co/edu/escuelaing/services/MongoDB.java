@@ -8,8 +8,6 @@ import org.bson.conversions.Bson;
 
 import java.util.*;
 
-import static com.mongodb.client.model.Aggregates.limit;
-
 public class MongoDB {
     //Yo sé que esto no se debe hacer, pero es con fines académicos xd
     MongoClient client = MongoClients.create("mongodb+srv://JuankAREP:AREP0323@cluster0.9cn0l.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
