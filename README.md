@@ -55,6 +55,41 @@ Utilizamos el comando `docker-compose up -d` para crear los servicios
 Verificamos que se hayan creado desde Docker Desktop
 
 ![img.png](img/img_9.png)
+
+Para poder subir la imagen a docker hub primero creamos el repositorio
+
+![img.png](img/img_10.png)
+
+Creamos y verificamos la referencia del repositorio
+
+![img.png](img/img_11.png)
+
+Hacemos push de la imagen y vemos el dashboard de dockerhub
+
+![img.png](img/img_12.png)
+![img.png](img/img_13.png)
+
+Accedemos a la maquina virtual
+
+![img.png](img/img_14.png)
+
+Instalamos docker dentro de nuestra maquina virtual con el comando `sudo yum install docker`
+
+![img.png](img/img_15.png)
+
+Traemos la imagen que subimos previamente a Dockerhub y creamos una instancia dentro de la maquina virtual de AWS
+
+![img.png](img/img_16.png)
+
+Abrimos los puertos de entrada desde el security group desde el dashboard de AWS
+
+![img.png](img/img_17.png)
+![img.png](img/img_18.png)
+
+Accedemos desde la dirección pública a la máquina virtual y probamos los endpoints que habíamos realizado
+
+![img.png](img/img_19.png)
+![img.png](img/img_20.png)
 ## Built With
 
 * [Spark](https://sparkjava.com/) - El framework web utilizado
