@@ -1,6 +1,6 @@
 # Aplicación web APP-LB-RoundRobin
 
-![img.png](img/img.png)
+![img.png](img/img_1.png)
 
 ## Getting Started
 
@@ -12,27 +12,8 @@ El software que vamos a necesitar para ejecutar es:
 
 * Maven
 * Java 8
-* Entorno de desarrollo
+* Entorno de desarrollo (Intellij- Visual Studio code - Netbeans)
 * Docker
-
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
 
 ## Requeriments
 
@@ -42,13 +23,20 @@ End with an example of getting some data out of the system or using it for a lit
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+Empezamos con el servidor de spark, donde luego de implementarlo verificamos su funcionamiento:
+
+* El metodo GET que nos devuleve las 10 ultimas cadenas de la base de datos
+![img.png](img/img_2.png)
+
+
+* El metodo POST que nos permite añadir más cadenas a la base de datos
+![img.png](img/img_3.png)
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [Spark](https://sparkjava.com/) - El framework web utilizado
+* [Maven](https://maven.apache.org/) - Gestor de dependencias
+* [Java](https://www.java.com/es/) - Lenguaje de programación
 
 ## Contributing
 
