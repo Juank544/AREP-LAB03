@@ -2,7 +2,7 @@ package co.edu.escuelaing;
 
 import co.edu.escuelaing.services.MongoDB;
 
-import static spark.Spark.port;
+import static spark.Spark.*;
 
 /**
  * Hello world!
@@ -15,7 +15,25 @@ public class App
     public static void main( String[] args )
     {
         port(getPort());
-        mongoDB.getCadenas();
+
+        get("/", ((request, response) -> "Hello Docker!"));
+
+        path("/api/v1",()->{
+            get("/cadenas", ((request, response) -> {
+                response.type("application/json");
+
+                return mongoDB.getCadenas();
+            }));
+
+            post("/cadena",((request, response) -> {
+                response.type("application/json");
+
+                if (request.body() != null){
+                    mongoDB.agregar(request.body());
+                }
+                return mongoDB.getCadenas();
+            }));
+        });
     }
 
     private static int getPort(){

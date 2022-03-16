@@ -14,9 +14,9 @@ public class MongoDB {
     MongoDatabase database = client.getDatabase("LAB03");
     MongoCollection<Document> cadenasCollection = database.getCollection("cadenas");
 
-    public void agregar(){
+    public void agregar(String contenido){
         Document test = new Document("_id", UUID.randomUUID().toString())
-                .append("contenido","quince")
+                .append("contenido",contenido)
                 .append("fecha",String.valueOf(new Date()));
         cadenasCollection.insertOne(test);
     }
@@ -38,7 +38,7 @@ public class MongoDB {
             cursor.close();
         }
 
-        System.out.println(cadenasList);
+        //System.out.println(cadenasList);
         return cadenasList;
     }
 }
