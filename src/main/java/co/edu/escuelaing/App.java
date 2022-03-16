@@ -15,7 +15,7 @@ public class App
     public static void main( String[] args )
     {
         port(getPort());
-        mongoDB.agregar();
+        mongoDB.getCadenas();
     }
 
     private static int getPort(){
