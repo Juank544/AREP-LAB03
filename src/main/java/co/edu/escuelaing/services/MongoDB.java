@@ -1,8 +1,10 @@
 package co.edu.escuelaing.services;
 
 import com.mongodb.client.*;
+import com.mongodb.client.model.Projections;
 import com.mongodb.client.model.Sorts;
 import org.bson.Document;
+import org.bson.conversions.Bson;
 
 import java.util.*;
 
@@ -24,22 +26,21 @@ public class MongoDB {
     public List<String> getCadenas(){
         List<String> cadenasList = new ArrayList<>();
 
-        FindIterable<Document> findIterable =cadenasCollection.find().sort(Sorts.descending("fecha")).limit(-10);
+        Bson projectionFields = Projections.fields(
+                Projections.include("contenido","fecha"),
+                Projections.excludeId());
 
-//        Iterator<Document> iterator = findIterable.iterator();
-//        while (iterator.hasNext()){
-//            System.out.println(iterator.next());
-//        }
+        MongoCursor<Document> cursor = cadenasCollection.find().projection(projectionFields).sort(Sorts.descending("fecha")).limit(-10).iterator();
 
-        ArrayList<Document> temp = new ArrayList<>();
-        findIterable.into(temp);
-        temp.forEach(document -> {
-            String cadena = document.toJson();
-            cadenasList.add(cadena);
-        });
+        try {
+            while (cursor.hasNext()){
+                cadenasList.add(cursor.next().toJson());
+            }
+        } finally {
+            cursor.close();
+        }
 
         System.out.println(cadenasList);
-
         return cadenasList;
     }
 }
